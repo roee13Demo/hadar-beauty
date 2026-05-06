@@ -59,7 +59,10 @@
       "Bash(curl -s -o /dev/null -w \"icon: %{http_code}\\\\n\" --max-time 60 http://localhost:3000/icon)",
       "Bash(curl -s -o /dev/null -w \"apple-icon: %{http_code}\\\\n\" --max-time 60 http://localhost:3000/apple-icon)",
       "Bash(curl -s -o /dev/null -w \"main: %{http_code}\\\\n\" --max-time 10 http://localhost:3000/)",
-      "mcp__plugin_playwright_playwright__browser_close"
+      "mcp__plugin_playwright_playwright__browser_close",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }

@@ -95,12 +95,8 @@ export default function DashboardPage() {
 
   return (
     <div className="flex flex-col gap-8">
-      {/* Welcome hero — soft time-of-day gradient glow above the heading */}
-      <div className="relative isolate flex flex-col gap-4 border-b border-border/60 pb-6">
-        <div
-          aria-hidden
-          className={`pointer-events-none absolute inset-x-0 -top-6 -z-10 h-48 bg-gradient-to-b transition-colors duration-1000 ${period.gradientClass}`}
-        />
+      {/* Welcome hero */}
+      <div className="flex flex-col gap-4 border-b border-border/60 pb-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
           <div className="flex flex-col gap-1">
             <h1 className="text-3xl font-semibold tracking-tight">
