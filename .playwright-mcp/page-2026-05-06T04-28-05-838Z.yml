@@ -1,0 +1,142 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e8]: הדר ביוטי
+      - button "היום —" [ref=e9] [cursor=pointer]:
+        - generic [ref=e10]: היום
+        - generic [ref=e11]: —
+      - button "מצב לפי המערכת" [ref=e12] [cursor=pointer]:
+        - img [ref=e13]
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - generic [ref=e20]:
+            - heading "ברוכה הבאה, הדר" [level=1] [ref=e21]
+            - paragraph [ref=e22]: יום רביעי, 6 במאי 2026
+          - link "עסקה חדשה" [ref=e23] [cursor=pointer]:
+            - /url: /transactions
+            - img [ref=e24]
+            - text: עסקה חדשה
+        - generic [ref=e25]:
+          - img [ref=e26]
+          - paragraph [ref=e28]: בכל גבה שאת מעצבת - את מעצבת קצת בטחון עצמי.
+      - generic [ref=e29]:
+        - heading "יעד החודש" [level=2] [ref=e30]
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - img [ref=e35]
+            - generic [ref=e39]:
+              - generic [ref=e40]: עדיין לא הגדרת יעד לחודש
+              - generic [ref=e41]: הגדירי יעד רווח נטו ונעקוב אחרי ההתקדמות יחד
+          - button "הגדרת יעד" [ref=e42] [cursor=pointer]:
+            - img [ref=e43]
+            - text: הגדרת יעד
+      - generic [ref=e47]:
+        - heading "היום" [level=2] [ref=e48]
+        - generic [ref=e49]:
+          - generic [ref=e51]:
+            - generic [ref=e52]:
+              - generic [ref=e53]: הכנסות היום
+              - img [ref=e55]
+            - generic [ref=e58]: ‏0 ‏₪
+            - generic [ref=e59]: אין עסקאות
+          - generic [ref=e61]:
+            - generic [ref=e62]:
+              - generic [ref=e63]: רווח נטו היום
+              - img [ref=e65]
+            - generic [ref=e68]: ‏0 ‏₪
+            - generic [ref=e69]: אין עוד פעילות להיום
+          - generic [ref=e71]:
+            - generic [ref=e72]:
+              - generic [ref=e73]: הוצאות היום
+              - img [ref=e75]
+            - generic [ref=e78]: ‏0 ‏₪
+            - generic [ref=e79]: אין הוצאות
+        - generic [ref=e81]:
+          - img [ref=e83]
+          - generic [ref=e86]:
+            - generic [ref=e87]: אין נתוני שעות להיום
+            - generic [ref=e88]: קשרי טיפולים לעסקאות לחישוב אוטומטי
+      - generic [ref=e89]:
+        - heading "החודש" [level=2] [ref=e90]
+        - generic [ref=e91]:
+          - generic [ref=e93]:
+            - generic [ref=e94]:
+              - generic [ref=e95]: הכנסות החודש
+              - img [ref=e97]
+            - generic [ref=e100]: ‏0 ‏₪
+            - generic [ref=e101]: אין עסקאות
+          - generic [ref=e103]:
+            - generic [ref=e104]:
+              - generic [ref=e105]: רווח נטו החודש
+              - img [ref=e107]
+            - generic [ref=e110]: ‏0 ‏₪
+            - generic [ref=e111]: ללא שינוי מהחודש הקודם
+          - generic [ref=e113]:
+            - generic [ref=e114]:
+              - generic [ref=e115]: מע״מ שנגבה החודש
+              - img [ref=e117]
+            - generic [ref=e120]: ‏0 ‏₪
+            - generic [ref=e121]: מסך ההכנסות × 18%
+      - generic [ref=e122]:
+        - heading "התראות" [level=2] [ref=e123]
+        - generic [ref=e124]:
+          - generic [ref=e126]:
+            - img [ref=e128]
+            - generic [ref=e131]:
+              - generic [ref=e132]: מלאי נמוך
+              - generic [ref=e133]: כל המלאי תקין
+          - generic [ref=e135]:
+            - img [ref=e137]
+            - generic [ref=e140]:
+              - generic [ref=e141]: פוקעים בקרוב
+              - generic [ref=e142]: אין פריטים שפוקעים בקרוב
+      - generic [ref=e143]:
+        - heading "תובנות החודש" [level=2] [ref=e144]
+        - generic [ref=e145]:
+          - generic [ref=e147]:
+            - generic [ref=e148]:
+              - img [ref=e150]
+              - generic [ref=e156]: הטיפול הרווחי ביותר
+            - generic [ref=e157]:
+              - img [ref=e158]
+              - generic [ref=e160]: אין עדיין הכנסות מטיפולים החודש
+          - generic [ref=e162]:
+            - generic [ref=e163]:
+              - img [ref=e165]
+              - generic [ref=e168]: היום הכי רווחי החודש
+            - generic [ref=e169]:
+              - img [ref=e170]
+              - generic [ref=e172]: אין עדיין יום עם רווח חיובי החודש
+          - generic [ref=e174]:
+            - generic [ref=e175]:
+              - img [ref=e177]
+              - generic [ref=e180]: אמצעי התשלום המוביל
+            - generic [ref=e181]:
+              - img [ref=e182]
+              - generic [ref=e184]: אין עדיין הכנסות החודש
+  - button "עסקה מהירה" [ref=e185] [cursor=pointer]:
+    - img [ref=e186]
+  - navigation [ref=e187]:
+    - link "סקירה" [ref=e188] [cursor=pointer]:
+      - /url: /
+      - img [ref=e189]
+      - generic [ref=e194]: סקירה
+    - link "טיפולים" [ref=e195] [cursor=pointer]:
+      - /url: /services
+      - img [ref=e196]
+      - generic [ref=e198]: טיפולים
+    - link "מלאי" [ref=e199] [cursor=pointer]:
+      - /url: /inventory
+      - img [ref=e200]
+      - generic [ref=e204]: מלאי
+    - link "עסקאות" [ref=e205] [cursor=pointer]:
+      - /url: /transactions
+      - img [ref=e206]
+      - generic [ref=e209]: עסקאות
+    - link "דוחות" [ref=e210] [cursor=pointer]:
+      - /url: /analytics
+      - img [ref=e211]
+      - generic [ref=e213]: דוחות
+  - region "Notifications alt+T"

@@ -1,0 +1,46 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e8]: הדר ביוטי
+      - button "היום —" [ref=e9] [cursor=pointer]:
+        - generic [ref=e10]: היום
+        - generic [ref=e11]: —
+      - button "מצב לפי המערכת" [ref=e12] [cursor=pointer]:
+        - img [ref=e13]
+    - generic [ref=e17]:
+      - generic [ref=e19]:
+        - heading "הוצאות קבועות" [level=1] [ref=e20]
+        - paragraph [ref=e21]: הגדרת הוצאות חודשיות חוזרות - שכירות, מנויים, ביטוחים וכו׳
+      - generic [ref=e22]:
+        - img [ref=e24]
+        - generic [ref=e29]:
+          - heading "עדיין לא הגדרת הוצאות קבועות" [level=2] [ref=e30]
+          - paragraph [ref=e31]: כל הוצאה שאת משלמת כל חודש - רשמי כאן פעם אחת ונדאג שתופיע בכל חודש
+        - button "הוסיפי הוצאה קבועה" [ref=e32] [cursor=pointer]:
+          - img [ref=e33]
+          - text: הוסיפי הוצאה קבועה
+  - button "עסקה מהירה" [ref=e34] [cursor=pointer]:
+    - img [ref=e35]
+  - navigation [ref=e36]:
+    - link "סקירה" [ref=e37] [cursor=pointer]:
+      - /url: /
+      - img [ref=e38]
+      - generic [ref=e43]: סקירה
+    - link "טיפולים" [ref=e44] [cursor=pointer]:
+      - /url: /services
+      - img [ref=e45]
+      - generic [ref=e47]: טיפולים
+    - link "מלאי" [ref=e48] [cursor=pointer]:
+      - /url: /inventory
+      - img [ref=e49]
+      - generic [ref=e53]: מלאי
+    - link "עסקאות" [ref=e54] [cursor=pointer]:
+      - /url: /transactions
+      - img [ref=e55]
+      - generic [ref=e58]: עסקאות
+    - link "דוחות" [ref=e59] [cursor=pointer]:
+      - /url: /analytics
+      - img [ref=e60]
+      - generic [ref=e62]: דוחות
+  - region "Notifications alt+T"

@@ -1,0 +1,199 @@
+- generic:
+  - generic:
+    - main:
+      - generic:
+        - generic:
+          - img
+        - generic: הדר ביוטי
+        - button:
+          - generic: היום
+          - generic: —
+        - button:
+          - img
+      - generic:
+        - generic:
+          - generic:
+            - generic:
+              - generic:
+                - heading [level=1]: ברוכה הבאה, הדר
+                - paragraph: יום רביעי, 6 במאי 2026
+              - link:
+                - /url: /transactions
+                - img
+                - text: עסקה חדשה
+            - generic:
+              - img
+              - paragraph: בעסק קטן - כל מחווה קטנה היא ענקית.
+          - generic:
+            - heading [level=2]: יעד החודש
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                    - generic:
+                      - generic: יעד רווח חודשי
+                      - generic: ‏0 ‏₪/‏10,000 ‏₪
+                  - button:
+                    - img
+                - generic:
+                  - progressbar
+                  - generic:
+                    - generic: 0% מהיעד
+                    - generic: נשארו ‏10,000 ‏₪ עד היעד
+          - generic:
+            - heading [level=2]: היום
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: הכנסות היום
+                    - generic:
+                      - img
+                  - generic: ‏0 ‏₪
+                  - generic: אין עסקאות
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: רווח נטו היום
+                    - generic:
+                      - img
+                  - generic: ‏0 ‏₪
+                  - generic: אין עוד פעילות להיום
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: הוצאות היום
+                    - generic:
+                      - img
+                  - generic: ‏0 ‏₪
+                  - generic: אין הוצאות
+            - generic:
+              - generic:
+                - generic:
+                  - img
+                - generic:
+                  - generic: אין נתוני שעות להיום
+                  - generic: קשרי טיפולים לעסקאות לחישוב אוטומטי
+          - generic:
+            - heading [level=2]: החודש
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: הכנסות החודש
+                    - generic:
+                      - img
+                  - generic: ‏0 ‏₪
+                  - generic: אין עסקאות
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: רווח נטו החודש
+                    - generic:
+                      - img
+                  - generic: ‏0 ‏₪
+                  - generic: ללא שינוי מהחודש הקודם
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: מע״מ שנגבה החודש
+                    - generic:
+                      - img
+                  - generic: ‏0 ‏₪
+                  - generic: מסך ההכנסות × 18%
+          - generic:
+            - heading [level=2]: התראות
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: מלאי נמוך
+                    - generic: כל המלאי תקין
+              - generic:
+                - generic:
+                  - generic:
+                    - img
+                  - generic:
+                    - generic: פוקעים בקרוב
+                    - generic: אין פריטים שפוקעים בקרוב
+          - generic:
+            - heading [level=2]: תובנות החודש
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                    - generic: הטיפול הרווחי ביותר
+                  - generic:
+                    - img
+                    - generic: אין עדיין הכנסות מטיפולים החודש
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                    - generic: היום הכי רווחי החודש
+                  - generic:
+                    - img
+                    - generic: אין עדיין יום עם רווח חיובי החודש
+              - generic:
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+                    - generic: אמצעי התשלום המוביל
+                  - generic:
+                    - img
+                    - generic: אין עדיין הכנסות החודש
+  - button:
+    - img
+  - navigation:
+    - link:
+      - /url: /
+      - img
+      - generic: סקירה
+    - link:
+      - /url: /services
+      - img
+      - generic: טיפולים
+    - link:
+      - /url: /inventory
+      - img
+      - generic: מלאי
+    - link:
+      - /url: /transactions
+      - img
+      - generic: עסקאות
+    - link:
+      - /url: /analytics
+      - img
+      - generic: דוחות
+  - region "Notifications alt+T"
+  - alert
+  - dialog "עסקה מהירה" [ref=e288]:
+    - generic [ref=e290]:
+      - heading "עסקה מהירה" [level=2] [ref=e291]
+      - button [ref=e292] [cursor=pointer]:
+        - img [ref=e293]
+    - generic [ref=e296]:
+      - generic [ref=e297]:
+        - button "הכנסה" [ref=e298] [cursor=pointer]
+        - button "הוצאה" [ref=e299] [cursor=pointer]
+      - generic [ref=e300]:
+        - spinbutton [active] [ref=e301]
+        - generic [ref=e302]: ₪
+      - generic [ref=e303]:
+        - button "מזומן" [ref=e304] [cursor=pointer]
+        - button "ביט" [ref=e305] [cursor=pointer]
+        - button "אשראי" [ref=e306] [cursor=pointer]
+        - button "פייבוקס" [ref=e307] [cursor=pointer]
+        - button "העברה" [ref=e308] [cursor=pointer]
+    - button "רישום עסקה" [disabled]
+    - button "סגירה" [ref=e309] [cursor=pointer]:
+      - img [ref=e310]
+      - generic [ref=e313]: סגירה

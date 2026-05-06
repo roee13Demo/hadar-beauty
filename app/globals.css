@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm off-white background */
+    --background: 35 50% 98%;
+    --foreground: 24 24% 11%;
+
+    /* Surface */
+    --card: 0 0% 100%;
+    --card-foreground: 24 24% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 24% 11%;
+
+    /* Muted rose-taupe primary */
+    --primary: 14 18% 53%;
+    --primary-foreground: 35 50% 98%;
+
+    /* Soft secondary (cream) */
+    --secondary: 30 30% 95%;
+    --secondary-foreground: 24 24% 11%;
+
+    /* Muted text + surfaces */
+    --muted: 30 25% 94%;
+    --muted-foreground: 24 12% 44%;
+
+    /* Soft gold accent */
+    --accent: 36 39% 61%;
+    --accent-foreground: 24 24% 11%;
+
+    /* Coral danger */
+    --destructive: 2 39% 52%;
+    --destructive-foreground: 35 50% 98%;
+
+    /* Sage success */
+    --success: 158 21% 45%;
+    --success-foreground: 35 50% 98%;
+
+    --border: 30 20% 90%;
+    --input: 30 20% 90%;
+    --ring: 14 18% 53%;
+
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    /* Deep warm charcoal background with subtle brown undertones */
+    --background: 24 14% 9%;
+    --foreground: 35 30% 92%;
+
+    /* Slightly elevated card surface */
+    --card: 24 12% 13%;
+    --card-foreground: 35 30% 92%;
+    --popover: 24 12% 13%;
+    --popover-foreground: 35 30% 92%;
+
+    /* Brighter rose-taupe primary so it pops on dark */
+    --primary: 14 22% 64%;
+    --primary-foreground: 24 18% 11%;
+
+    /* Subtle warm-grey secondary */
+    --secondary: 24 10% 17%;
+    --secondary-foreground: 35 30% 92%;
+
+    /* Muted surfaces */
+    --muted: 24 8% 18%;
+    --muted-foreground: 30 12% 64%;
+
+    /* Warm gold accent stays vivid */
+    --accent: 36 35% 52%;
+    --accent-foreground: 24 18% 11%;
+
+    /* Slightly desaturated coral so it isn't blinding */
+    --destructive: 2 50% 58%;
+    --destructive-foreground: 35 30% 96%;
+
+    /* Sage success */
+    --success: 158 24% 50%;
+    --success-foreground: 35 30% 96%;
+
+    --border: 24 10% 22%;
+    --input: 24 10% 22%;
+    --ring: 14 22% 64%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    direction: rtl;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "ss01", "cv02";
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  /* Numeric content stays LTR for readability */
+  .num {
+    direction: ltr;
+    display: inline-block;
+    unicode-bidi: isolate;
+  }
+}

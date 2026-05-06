@@ -1,0 +1,46 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e8]: הדר ביוטי
+      - button "היום —" [ref=e9] [cursor=pointer]:
+        - generic [ref=e10]: היום
+        - generic [ref=e11]: —
+      - button "מצב לפי המערכת" [ref=e12] [cursor=pointer]:
+        - img [ref=e13]
+    - generic [ref=e17]:
+      - generic [ref=e19]:
+        - heading "מלאי וחומרים" [level=1] [ref=e20]
+        - paragraph [ref=e21]: מעקב מלאי, עלויות יחידה, וקישור לטיפולים
+      - generic [ref=e22]:
+        - img [ref=e24]
+        - generic [ref=e28]:
+          - heading "עדיין לא הוספת פריטי מלאי" [level=2] [ref=e29]
+          - paragraph [ref=e30]: התחילי מהמוצר הראשון שאת משתמשת בו בטיפולים
+        - button "הוסיפי פריט ראשון" [ref=e31] [cursor=pointer]:
+          - img [ref=e32]
+          - text: הוסיפי פריט ראשון
+  - button "עסקה מהירה" [ref=e33] [cursor=pointer]:
+    - img [ref=e34]
+  - navigation [ref=e35]:
+    - link "סקירה" [ref=e36] [cursor=pointer]:
+      - /url: /
+      - img [ref=e37]
+      - generic [ref=e42]: סקירה
+    - link "טיפולים" [ref=e43] [cursor=pointer]:
+      - /url: /services
+      - img [ref=e44]
+      - generic [ref=e46]: טיפולים
+    - link "מלאי" [ref=e47] [cursor=pointer]:
+      - /url: /inventory
+      - img [ref=e48]
+      - generic [ref=e52]: מלאי
+    - link "עסקאות" [ref=e53] [cursor=pointer]:
+      - /url: /transactions
+      - img [ref=e54]
+      - generic [ref=e57]: עסקאות
+    - link "דוחות" [ref=e58] [cursor=pointer]:
+      - /url: /analytics
+      - img [ref=e59]
+      - generic [ref=e61]: דוחות
+  - region "Notifications alt+T"

@@ -1,0 +1,46 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e8]: הדר ביוטי
+      - button "היום —" [ref=e9] [cursor=pointer]:
+        - generic [ref=e10]: היום
+        - generic [ref=e11]: —
+      - button "מצב לפי המערכת" [ref=e12] [cursor=pointer]:
+        - img [ref=e13]
+    - generic [ref=e17]:
+      - generic [ref=e19]:
+        - heading "ניהול טיפולים" [level=1] [ref=e20]
+        - paragraph [ref=e21]: הגדרת התפריט המקצועי שלך
+      - generic [ref=e22]:
+        - img [ref=e24]
+        - generic [ref=e26]:
+          - heading "עדיין לא הוספת טיפולים" [level=2] [ref=e27]
+          - paragraph [ref=e28]: נתחיל מהגדרת הטיפול הראשון שלך
+        - button "הוסיפי טיפול ראשון" [ref=e29] [cursor=pointer]:
+          - img [ref=e30]
+          - text: הוסיפי טיפול ראשון
+  - button "עסקה מהירה" [ref=e31] [cursor=pointer]:
+    - img [ref=e32]
+  - navigation [ref=e33]:
+    - link "סקירה" [ref=e34] [cursor=pointer]:
+      - /url: /
+      - img [ref=e35]
+      - generic [ref=e40]: סקירה
+    - link "טיפולים" [ref=e41] [cursor=pointer]:
+      - /url: /services
+      - img [ref=e42]
+      - generic [ref=e44]: טיפולים
+    - link "מלאי" [ref=e45] [cursor=pointer]:
+      - /url: /inventory
+      - img [ref=e46]
+      - generic [ref=e50]: מלאי
+    - link "עסקאות" [ref=e51] [cursor=pointer]:
+      - /url: /transactions
+      - img [ref=e52]
+      - generic [ref=e55]: עסקאות
+    - link "דוחות" [ref=e56] [cursor=pointer]:
+      - /url: /analytics
+      - img [ref=e57]
+      - generic [ref=e59]: דוחות
+  - region "Notifications alt+T"

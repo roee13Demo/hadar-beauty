@@ -1,0 +1,116 @@
+- generic [active] [ref=e1]:
+  - main [ref=e3]:
+    - generic [ref=e4]:
+      - img [ref=e6]
+      - generic [ref=e8]: הדר ביוטי
+      - button "היום —" [ref=e9] [cursor=pointer]:
+        - generic [ref=e10]: היום
+        - generic [ref=e11]: —
+      - button "מצב לפי המערכת" [ref=e12] [cursor=pointer]:
+        - img [ref=e13]
+    - generic [ref=e17]:
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - heading "ניתוח ודוחות" [level=1] [ref=e20]
+          - paragraph [ref=e21]: תובנות עסקיות וייצוא דוחות תקופתיים
+        - generic [ref=e23]:
+          - button "7 ימים" [ref=e24] [cursor=pointer]
+          - button "30 ימים" [ref=e25] [cursor=pointer]
+          - button "90 ימים" [ref=e26] [cursor=pointer]
+          - button "שנה" [ref=e27] [cursor=pointer]
+      - generic [ref=e28]:
+        - generic [ref=e30]:
+          - generic [ref=e31]:
+            - generic [ref=e32]: הכנסות
+            - img [ref=e34]
+          - generic [ref=e37]: ‏0 ‏₪
+          - generic [ref=e38]: 0 עסקאות
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]: רווח נטו
+            - img [ref=e44]
+          - generic [ref=e47]: ‏0 ‏₪
+          - generic [ref=e48]: אין הכנסות
+        - generic [ref=e50]:
+          - generic [ref=e51]:
+            - generic [ref=e52]: הוצאות
+            - img [ref=e54]
+          - generic [ref=e57]: ‏0 ‏₪
+          - generic [ref=e58]: 0 הוצאות
+        - generic [ref=e60]:
+          - generic [ref=e61]:
+            - generic [ref=e62]: מע״מ שנגבה
+            - img [ref=e64]
+          - generic [ref=e67]: ‏0 ‏₪
+          - generic [ref=e68]: לדיווח לרשויות
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e71]: מגמת הכנסות ורווח
+          - generic [ref=e72]: סכומים יומיים בתקופה הנבחרת
+        - paragraph [ref=e75]: אין עסקאות בתקופה הזו - הוסיפי עסקה ב-רישום עסקאות
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - generic [ref=e79]: רווח נטו לפי טיפול
+            - generic [ref=e80]: סיכום הרווחים לתקופה
+          - paragraph [ref=e83]: אין הכנסות מטיפולים בתקופה הזו
+        - generic [ref=e84]:
+          - generic [ref=e85]:
+            - generic [ref=e86]: פילוח הוצאות
+            - generic [ref=e87]: התפלגות הוצאות לפי קטגוריה
+          - paragraph [ref=e90]: אין הוצאות בתקופה הזו
+      - generic [ref=e91]:
+        - generic [ref=e92]:
+          - generic [ref=e93]:
+            - heading "השוואה חודשית" [level=3] [ref=e94]
+            - paragraph [ref=e95]: רווח נטו לפי חודשים — 2026
+          - generic [ref=e96]:
+            - generic [ref=e97]:
+              - button "רווח נטו" [ref=e98] [cursor=pointer]
+              - button "הכנסות" [ref=e99] [cursor=pointer]
+              - button "הוצאות" [ref=e100] [cursor=pointer]
+            - button "השוואה לשנה שעברה" [ref=e101] [cursor=pointer]
+        - generic [ref=e102]: אין נתונים לשנה זו עדיין
+      - generic [ref=e103]:
+        - generic [ref=e104]:
+          - generic [ref=e105]: ייצוא וגיבוי
+          - generic [ref=e106]: הנתונים נשמרים אצלך במכשיר בלבד. מומלץ לבצע גיבוי מלא מדי חודש.
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - button "ייצוא לרו״ח (CSV) כל העסקאות בתקופה הנבחרת" [ref=e109] [cursor=pointer]:
+              - img [ref=e111]
+              - generic [ref=e114]: ייצוא לרו״ח (CSV)
+              - generic [ref=e115]: כל העסקאות בתקופה הנבחרת
+            - 'button "גיבוי מלא (JSON) כל הנתונים: טיפולים, מלאי, עסקאות, הגדרות" [ref=e116] [cursor=pointer]':
+              - img [ref=e118]
+              - generic [ref=e122]: גיבוי מלא (JSON)
+              - generic [ref=e123]: "כל הנתונים: טיפולים, מלאי, עסקאות, הגדרות"
+            - button "שחזור מגיבוי טעינת קובץ JSON שיוצא ממערכת זו" [ref=e124] [cursor=pointer]:
+              - img [ref=e126]
+              - generic [ref=e129]: שחזור מגיבוי
+              - generic [ref=e130]: טעינת קובץ JSON שיוצא ממערכת זו
+          - button "Choose File" [ref=e131]
+  - button "עסקה מהירה" [ref=e132] [cursor=pointer]:
+    - img [ref=e133]
+  - navigation [ref=e134]:
+    - link "סקירה" [ref=e135] [cursor=pointer]:
+      - /url: /
+      - img [ref=e136]
+      - generic [ref=e141]: סקירה
+    - link "טיפולים" [ref=e142] [cursor=pointer]:
+      - /url: /services
+      - img [ref=e143]
+      - generic [ref=e145]: טיפולים
+    - link "מלאי" [ref=e146] [cursor=pointer]:
+      - /url: /inventory
+      - img [ref=e147]
+      - generic [ref=e151]: מלאי
+    - link "עסקאות" [ref=e152] [cursor=pointer]:
+      - /url: /transactions
+      - img [ref=e153]
+      - generic [ref=e156]: עסקאות
+    - link "דוחות" [ref=e157] [cursor=pointer]:
+      - /url: /analytics
+      - img [ref=e158]
+      - generic [ref=e160]: דוחות
+  - region "Notifications alt+T"
