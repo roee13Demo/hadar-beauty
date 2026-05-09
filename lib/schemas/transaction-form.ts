@@ -39,14 +39,21 @@ const baseFields = {
     .transform((v) => (v && v.trim().length > 0 ? v : null)),
 };
 
-export const incomeFormSchema = z.object({
-  ...baseFields,
-  type: z.literal("income"),
-  service_id: z
-    .string({ required_error: he.transactions.validation.serviceRequired })
-    .min(1, he.transactions.validation.serviceRequired),
-  with_color: z.boolean(),
-});
+export const incomeFormSchema = z
+  .object({
+    ...baseFields,
+    type: z.literal("income"),
+    income_mode: z.enum(["service", "lumpsum"]).default("service"),
+    service_id: z.string().default(""),
+    with_color: z.boolean(),
+  })
+  .refine(
+    (data) => data.income_mode === "lumpsum" || data.service_id.length > 0,
+    {
+      message: he.transactions.validation.serviceRequired,
+      path: ["service_id"],
+    },
+  );
 
 export const expenseFormSchema = z.object({
   ...baseFields,
@@ -58,7 +65,7 @@ export const expenseFormSchema = z.object({
     .min(1, he.transactions.validation.expenseCategoryRequired),
 });
 
-export const transactionFormSchema = z.discriminatedUnion("type", [
+export const transactionFormSchema = z.union([
   incomeFormSchema,
   expenseFormSchema,
 ]);

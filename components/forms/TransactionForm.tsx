@@ -50,6 +50,7 @@ function buildDefaults(initial?: Transaction): TransactionFormValues {
     return {
       type: "income",
       date: todayIso(),
+      income_mode: "service",
       service_id: "",
       with_color: false,
       amount_gross: 0,
@@ -61,10 +62,8 @@ function buildDefaults(initial?: Transaction): TransactionFormValues {
     return {
       type: "income",
       date: initial.date,
+      income_mode: initial.service_id ? "service" : "lumpsum",
       service_id: initial.service_id ?? "",
-      // The original with_color flag is not stored separately - we infer it
-      // by comparing amount_gross to (service.price + addon). The form lets
-      // her edit the flag and amount manually if needed.
       with_color: false,
       amount_gross: initial.amount_gross,
       payment_method: initial.payment_method,
@@ -118,6 +117,10 @@ export function TransactionForm({
   const watchedPayment = watch("payment_method");
 
   // Income-only watchers
+  const watchedIncomeMode =
+    watchedType === "income"
+      ? (watch("income_mode" as const) as string)
+      : "service";
   const watchedServiceId =
     watchedType === "income"
       ? (watch("service_id" as const) as string)
@@ -184,6 +187,7 @@ export function TransactionForm({
       reset({
         type: "income",
         date: watchedDate || todayIso(),
+        income_mode: "service",
         service_id: "",
         with_color: false,
         amount_gross: 0,
@@ -263,6 +267,40 @@ export function TransactionForm({
             />
           </div>
 
+          {/* Income mode toggle (service vs lump sum) */}
+          {watchedType === "income" && (
+            <div className="flex items-center gap-1 rounded-lg border border-border/70 bg-secondary/30 p-1">
+              <button
+                type="button"
+                onClick={() =>
+                  setValue("income_mode", "service", { shouldValidate: false })
+                }
+                className={cn(
+                  "flex-1 rounded px-3 py-2 text-sm font-medium transition-colors",
+                  watchedIncomeMode === "service"
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground",
+                )}
+              >
+                בחירת טיפול
+              </button>
+              <button
+                type="button"
+                onClick={() =>
+                  setValue("income_mode", "lumpsum", { shouldValidate: false })
+                }
+                className={cn(
+                  "flex-1 rounded px-3 py-2 text-sm font-medium transition-colors",
+                  watchedIncomeMode === "lumpsum"
+                    ? "bg-primary text-primary-foreground"
+                    : "text-muted-foreground hover:text-foreground",
+                )}
+              >
+                סכום חופשי
+              </button>
+            </div>
+          )}
+
           <FormField
             label={he.transactions.fields.date}
             error={errors.date?.message}
@@ -273,73 +311,77 @@ export function TransactionForm({
 
           {watchedType === "income" ? (
             <>
-              <FormField
-                label={he.transactions.fields.service}
-                error={
-                  (errors as Record<string, { message?: string } | undefined>)
-                    .service_id?.message
-                }
-                htmlFor="service_id"
-              >
-                {noActiveServices ? (
-                  <p className="rounded-lg border border-dashed border-border/70 bg-card/50 p-3 text-sm text-muted-foreground">
-                    {he.transactions.validation.noActiveServices}
-                  </p>
-                ) : (
-                  <Controller
-                    control={control}
-                    name="service_id"
-                    render={({ field }) => (
-                      <Select
-                        dir="rtl"
-                        value={field.value || undefined}
-                        onValueChange={(v) => {
-                          field.onChange(v);
+              {watchedIncomeMode === "service" && (
+                <>
+                  <FormField
+                    label={he.transactions.fields.service}
+                    error={
+                      (errors as Record<string, { message?: string } | undefined>)
+                        .service_id?.message
+                    }
+                    htmlFor="service_id"
+                  >
+                    {noActiveServices ? (
+                      <p className="rounded-lg border border-dashed border-border/70 bg-card/50 p-3 text-sm text-muted-foreground">
+                        {he.transactions.validation.noActiveServices}
+                      </p>
+                    ) : (
+                      <Controller
+                        control={control}
+                        name="service_id"
+                        render={({ field }) => (
+                          <Select
+                            dir="rtl"
+                            value={field.value || undefined}
+                            onValueChange={(v) => {
+                              field.onChange(v);
+                              setAmountTouched(false);
+                            }}
+                          >
+                            <SelectTrigger id="service_id">
+                              <SelectValue
+                                placeholder={
+                                  he.transactions.fields.servicePlaceholder
+                                }
+                              />
+                            </SelectTrigger>
+                            <SelectContent>
+                              {activeServices.map((s) => (
+                                <SelectItem key={s.id} value={s.id}>
+                                  {he.categories[s.category]}
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                        )}
+                      />
+                    )}
+                  </FormField>
+
+                  {colorAddon && (
+                    <div className="flex items-center justify-between rounded-lg border border-border/70 bg-secondary/30 p-4">
+                      <Label
+                        htmlFor="with_color"
+                        className="cursor-pointer text-sm"
+                      >
+                        {he.transactions.fields.withColor.replace(
+                          "%price",
+                          String(colorAddon.price_delta_ils),
+                        )}
+                      </Label>
+                      <Switch
+                        id="with_color"
+                        checked={watchedWithColor}
+                        onCheckedChange={(checked) => {
+                          setValue("with_color", checked, {
+                            shouldValidate: false,
+                          });
                           setAmountTouched(false);
                         }}
-                      >
-                        <SelectTrigger id="service_id">
-                          <SelectValue
-                            placeholder={
-                              he.transactions.fields.servicePlaceholder
-                            }
-                          />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {activeServices.map((s) => (
-                            <SelectItem key={s.id} value={s.id}>
-                              {he.categories[s.category]}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    )}
-                  />
-                )}
-              </FormField>
-
-              {colorAddon && (
-                <div className="flex items-center justify-between rounded-lg border border-border/70 bg-secondary/30 p-4">
-                  <Label
-                    htmlFor="with_color"
-                    className="cursor-pointer text-sm"
-                  >
-                    {he.transactions.fields.withColor.replace(
-                      "%price",
-                      String(colorAddon.price_delta_ils),
-                    )}
-                  </Label>
-                  <Switch
-                    id="with_color"
-                    checked={watchedWithColor}
-                    onCheckedChange={(checked) => {
-                      setValue("with_color", checked, {
-                        shouldValidate: false,
-                      });
-                      setAmountTouched(false);
-                    }}
-                  />
-                </div>
+                      />
+                    </div>
+                  )}
+                </>
               )}
             </>
           ) : (
