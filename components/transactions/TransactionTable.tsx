@@ -47,16 +47,20 @@ export function TransactionTable({
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>{he.transactions.table.date}</TableHead>
+            <TableHead className="hidden sm:table-cell">
+              {he.transactions.table.date}
+            </TableHead>
             <TableHead>{he.transactions.table.type}</TableHead>
             <TableHead>{he.transactions.table.description}</TableHead>
             <TableHead className="text-end">
               {he.transactions.table.gross}
             </TableHead>
-            <TableHead className="text-end">
+            <TableHead className="hidden text-end sm:table-cell">
               {he.transactions.table.net}
             </TableHead>
-            <TableHead>{he.transactions.table.paymentMethod}</TableHead>
+            <TableHead className="hidden sm:table-cell">
+              {he.transactions.table.paymentMethod}
+            </TableHead>
             <TableHead className="w-12 text-end">
               <span className="sr-only">{he.common.actions}</span>
             </TableHead>
@@ -79,7 +83,7 @@ export function TransactionTable({
               : format(date, "d בMMM", { locale: heLocale });
             return (
               <TableRow key={t.id}>
-                <TableCell className="num text-sm tabular-nums text-muted-foreground">
+                <TableCell className="num hidden text-sm tabular-nums text-muted-foreground sm:table-cell">
                   {dateLabel}
                 </TableCell>
                 <TableCell>
@@ -98,6 +102,9 @@ export function TransactionTable({
                 <TableCell>
                   <div className="flex flex-col gap-0.5">
                     <span className="font-medium">{description}</span>
+                    <span className="text-xs text-muted-foreground sm:hidden">
+                      {dateLabel} · {he.paymentMethods[t.payment_method]}
+                    </span>
                     {t.notes_he && (
                       <span className="text-xs text-muted-foreground">
                         {t.notes_he}
@@ -110,7 +117,7 @@ export function TransactionTable({
                     ? formatILS(t.amount_gross)
                     : `-${formatILS(t.amount_gross)}`}
                 </TableCell>
-                <TableCell className="num text-end tabular-nums">
+                <TableCell className="num hidden text-end tabular-nums sm:table-cell">
                   <span
                     className={cn(
                       t.type === "income"
@@ -125,7 +132,7 @@ export function TransactionTable({
                       : `-${formatILS(t.amount_gross)}`}
                   </span>
                 </TableCell>
-                <TableCell className="text-sm text-muted-foreground">
+                <TableCell className="hidden text-sm text-muted-foreground sm:table-cell">
                   {he.paymentMethods[t.payment_method]}
                 </TableCell>
                 <TableCell className="text-end">

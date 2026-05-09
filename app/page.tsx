@@ -99,7 +99,7 @@ export default function DashboardPage() {
       <div className="flex flex-col gap-4 border-b border-border/60 pb-6">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
           <div className="flex flex-col gap-1">
-            <h1 className="text-3xl font-semibold tracking-tight">
+            <h1 className="text-2xl font-semibold tracking-tight sm:text-3xl">
               {period.greeting("הדר")}
             </h1>
             <p className="text-sm text-muted-foreground">{dateLabel}</p>
@@ -164,7 +164,7 @@ function Section({
 }) {
   return (
     <section className="flex flex-col gap-3">
-      <h2 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+      <h2 className="text-[13px] font-semibold uppercase tracking-wider text-muted-foreground sm:text-xs">
         {title}
       </h2>
       {children}

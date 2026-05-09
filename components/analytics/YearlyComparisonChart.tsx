@@ -116,7 +116,8 @@ export function YearlyComparisonChart({ transactions }: Props) {
           {he.yearlyChart.noData}
         </div>
       ) : (
-        <ResponsiveContainer width="100%" height={220}>
+        <div className="h-48 w-full sm:h-56">
+        <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={chartData}
             margin={{ top: 4, right: 4, left: 0, bottom: 0 }}
@@ -188,6 +189,7 @@ export function YearlyComparisonChart({ transactions }: Props) {
             )}
           </BarChart>
         </ResponsiveContainer>
+        </div>
       )}
     </div>
   );

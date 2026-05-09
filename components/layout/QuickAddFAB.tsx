@@ -45,7 +45,7 @@ export function QuickAddFAB() {
         onClick={() => setOpen(true)}
         aria-label={he.quickAdd.title}
         className={cn(
-          "fixed bottom-24 end-4 z-50 flex h-14 w-14 items-center justify-center",
+          "fixed bottom-[calc(6rem+env(safe-area-inset-bottom))] end-4 z-50 flex h-14 w-14 items-center justify-center",
           "rounded-full bg-primary text-primary-foreground shadow-lg",
           "transition-transform active:scale-95 md:hidden",
         )}

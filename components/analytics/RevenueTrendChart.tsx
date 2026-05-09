@@ -57,7 +57,7 @@ export function RevenueTrendChart({ data }: RevenueTrendChartProps) {
       title={he.analytics.revenueTrend.title}
       subtitle={he.analytics.revenueTrend.subtitle}
     >
-      <div className="h-72 w-full" style={{ direction: "ltr" }}>
+      <div className="h-56 w-full sm:h-72" style={{ direction: "ltr" }}>
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={enriched}

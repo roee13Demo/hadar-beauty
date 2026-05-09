@@ -65,11 +65,11 @@ export function MotivationalQuote() {
   const quote = QUOTES[index];
 
   return (
-    <div className="flex items-start gap-2.5">
+    <div className="flex items-start gap-2 sm:gap-2.5">
       <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
       <p
         key={index}
-        className={`text-base font-semibold leading-snug text-foreground transition-all duration-500 ease-out ${
+        className={`break-words text-base font-semibold leading-snug text-foreground transition-all duration-500 ease-out ${
           visible ? "translate-y-0 opacity-100" : "translate-y-1 opacity-0"
         }`}
       >

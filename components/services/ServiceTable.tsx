@@ -43,10 +43,10 @@ export function ServiceTable({
             <TableHead className="text-end">
               {he.services.table.price}
             </TableHead>
-            <TableHead className="text-end">
+            <TableHead className="hidden text-end sm:table-cell">
               {he.services.table.netProfit}
             </TableHead>
-            <TableHead className="text-end">
+            <TableHead className="hidden text-end sm:table-cell">
               {he.services.table.duration}
             </TableHead>
             <TableHead>{he.services.table.status}</TableHead>
@@ -93,7 +93,7 @@ export function ServiceTable({
                     )}
                   </div>
                 </TableCell>
-                <TableCell className="num text-end tabular-nums">
+                <TableCell className="num hidden text-end tabular-nums sm:table-cell">
                   <span
                     className={
                       margin.netProfit <= 0
@@ -106,7 +106,7 @@ export function ServiceTable({
                     {formatILS(margin.netProfit)}
                   </span>
                 </TableCell>
-                <TableCell className="num text-end tabular-nums text-muted-foreground">
+                <TableCell className="num hidden text-end tabular-nums text-muted-foreground sm:table-cell">
                   {service.duration_minutes} {he.services.fields.durationSuffix}
                 </TableCell>
                 <TableCell>

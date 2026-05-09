@@ -41,14 +41,18 @@ export function InventoryTable({
         <TableHeader>
           <TableRow>
             <TableHead>{he.inventory.table.name}</TableHead>
-            <TableHead>{he.inventory.table.category}</TableHead>
+            <TableHead className="hidden sm:table-cell">
+              {he.inventory.table.category}
+            </TableHead>
             <TableHead className="text-end">
               {he.inventory.table.stock}
             </TableHead>
-            <TableHead className="text-end">
+            <TableHead className="hidden text-end sm:table-cell">
               {he.inventory.table.unitCost}
             </TableHead>
-            <TableHead>{he.inventory.table.expiry}</TableHead>
+            <TableHead className="hidden sm:table-cell">
+              {he.inventory.table.expiry}
+            </TableHead>
             <TableHead>{he.inventory.table.status}</TableHead>
             <TableHead className="w-12 text-end">
               <span className="sr-only">{he.common.actions}</span>
@@ -71,7 +75,7 @@ export function InventoryTable({
                     <span className="font-medium">{item.name_he}</span>
                   </div>
                 </TableCell>
-                <TableCell className="text-muted-foreground">
+                <TableCell className="hidden text-muted-foreground sm:table-cell">
                   {he.inventoryCategories[item.category]}
                 </TableCell>
                 <TableCell className="num text-end tabular-nums">
@@ -79,10 +83,10 @@ export function InventoryTable({
                     {item.current_stock_units} {unitShort}
                   </span>
                 </TableCell>
-                <TableCell className="num text-end tabular-nums">
+                <TableCell className="num hidden text-end tabular-nums sm:table-cell">
                   {formatPerUnit(item.cost_per_unit, unitShort)}
                 </TableCell>
-                <TableCell className="text-sm">
+                <TableCell className="hidden text-sm sm:table-cell">
                   {item.expiry_date ? (
                     <ExpiryCell
                       iso={item.expiry_date}

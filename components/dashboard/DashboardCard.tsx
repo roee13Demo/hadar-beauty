@@ -42,7 +42,7 @@ export function DashboardCard({
             </div>
           )}
         </div>
-        <div className={cn("num text-2xl font-semibold tabular-nums", valueClass)}>
+        <div className={cn("num text-xl font-semibold tabular-nums sm:text-2xl", valueClass)}>
           {value}
         </div>
         {caption && (

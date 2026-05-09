@@ -45,11 +45,15 @@ export function RecurringExpenseTable({
             <TableHead className="text-end">
               {he.recurring.table.amount}
             </TableHead>
-            <TableHead>{he.recurring.table.category}</TableHead>
-            <TableHead className="text-end">
+            <TableHead className="hidden sm:table-cell">
+              {he.recurring.table.category}
+            </TableHead>
+            <TableHead className="hidden text-end sm:table-cell">
               {he.recurring.table.day}
             </TableHead>
-            <TableHead>{he.recurring.table.lastPosted}</TableHead>
+            <TableHead className="hidden sm:table-cell">
+              {he.recurring.table.lastPosted}
+            </TableHead>
             <TableHead>{he.recurring.table.status}</TableHead>
             <TableHead className="w-12 text-end">
               <span className="sr-only">{he.common.actions}</span>
@@ -84,13 +88,13 @@ export function RecurringExpenseTable({
                 <TableCell className="num text-end tabular-nums">
                   {formatILS(item.amount_ils)}
                 </TableCell>
-                <TableCell className="text-muted-foreground">
+                <TableCell className="hidden text-muted-foreground sm:table-cell">
                   {item.expense_category}
                 </TableCell>
-                <TableCell className="num text-end tabular-nums text-muted-foreground">
+                <TableCell className="num hidden text-end tabular-nums text-muted-foreground sm:table-cell">
                   {item.day_of_month}
                 </TableCell>
-                <TableCell className="text-xs text-muted-foreground">
+                <TableCell className="hidden text-xs text-muted-foreground sm:table-cell">
                   {lastPostedLabel}
                 </TableCell>
                 <TableCell>
